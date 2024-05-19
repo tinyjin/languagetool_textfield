@@ -15,6 +15,9 @@ class LanguageToolTextField extends StatefulWidget {
   /// Color scheme to highlight mistakes
   final LanguageToolController controller;
 
+  /// Scroll physics
+  final ScrollPhysics scrollPhysics;
+
   /// Mistake popup window
   final MistakePopup? mistakePopup;
 
@@ -59,6 +62,7 @@ class LanguageToolTextField extends StatefulWidget {
     required this.controller,
     this.style,
     this.decoration = const InputDecoration(),
+    this.scrollPhysics = const ScrollPhysics(),
     this.language = 'auto',
     this.mistakePopup,
     this.maxLines = 1,
