@@ -39,6 +39,8 @@ class LanguageToolTextField extends StatefulWidget {
   /// Determine text Direction
   final TextDirection? textDirection;
 
+  final void Function(String)? onChanged;
+
   /// Creates a widget that checks grammar errors.
   const LanguageToolTextField({
     required this.controller,
@@ -50,6 +52,7 @@ class LanguageToolTextField extends StatefulWidget {
     this.minLines,
     this.expands = false,
     this.textAlign = TextAlign.start,
+    this.onChanged,
     this.textDirection,
     super.key,
   });
@@ -110,6 +113,7 @@ class _LanguageToolTextFieldState extends State<LanguageToolTextField> {
               minLines: widget.minLines,
               maxLines: widget.maxLines,
               expands: widget.expands,
+              onChanged: widget.onChanged,
               style: widget.style,
             ),
           ),
