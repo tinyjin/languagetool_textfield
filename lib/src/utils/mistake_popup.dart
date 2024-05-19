@@ -201,7 +201,7 @@ class LanguageToolMistakePopup extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(bottom: padding),
                         child: Text(
-                          mistake.message,
+                          mistake.message, // TODO 번역
                           style: const TextStyle(
                             fontSize: _mistakeMessageFontSize,
                           ),
@@ -224,7 +224,9 @@ class LanguageToolMistakePopup extends StatelessWidget {
                                         horizontal: 8,
                                       ),
                                     ),
-                                child: Text(replacement),
+                                child: Text(replacement,
+                                    style: const TextStyle(
+                                        color: Color(0xffff635b))),
                               ),
                             )
                             .toList(),

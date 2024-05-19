@@ -43,7 +43,7 @@ class HighlightStyle {
     this.grammarMistakeColor = Colors.amber,
     this.uncategorizedMistakeColor = Colors.blue,
     this.nonConformanceMistakeColor = Colors.greenAccent,
-    this.styleMistakeColor = Colors.deepPurpleAccent,
+    this.styleMistakeColor = const Color(0xffff635b),
     this.otherMistakeColor = Colors.white60,
     this.backgroundOpacity = _initialBackgroundOpacity,
     this.mistakeLineThickness = _initialLineHeight,
