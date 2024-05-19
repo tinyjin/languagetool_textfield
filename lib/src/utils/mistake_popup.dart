@@ -151,7 +151,6 @@ class LanguageToolMistakePopup extends StatelessWidget {
                               LangToolImages.logo,
                               width: _iconSize,
                               height: _iconSize,
-                              package: 'languagetool_textfield',
                             ),
                           ),
                           const Text('Correct'),
