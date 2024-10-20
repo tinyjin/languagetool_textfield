@@ -112,6 +112,7 @@ class LanguageToolMistakePopup extends StatelessWidget {
     const padding = 10.0;
 
     final availableSpace = _calculateAvailableSpace(context);
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
     return PointerInterceptor(
       child: ConstrainedBox(
@@ -125,7 +126,9 @@ class LanguageToolMistakePopup extends StatelessWidget {
             vertical: verticalMargin,
           ),
           decoration: BoxDecoration(
-            color: const Color.fromRGBO(241, 243, 248, 1.0),
+            color: isDarkMode
+              ? const Color.fromARGB(255, 53, 53, 53)
+              : const Color.fromRGBO(241, 243, 248, 1.0),
             borderRadius: BorderRadius.circular(_borderRadius),
             boxShadow: const [BoxShadow(color: Colors.grey, blurRadius: 8)],
           ),
@@ -179,7 +182,7 @@ class LanguageToolMistakePopup extends StatelessWidget {
                   margin: const EdgeInsets.only(top: 8),
                   padding: const EdgeInsets.all(padding),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color:  isDarkMode ? Colors.grey : Colors.white,
                     borderRadius: BorderRadius.circular(_borderRadius),
                   ),
                   child: SingleChildScrollView(
@@ -193,7 +196,7 @@ class LanguageToolMistakePopup extends StatelessWidget {
                           child: Text(
                             mistake.type.name.capitalize(),
                             style: TextStyle(
-                              color: Colors.grey.shade700,
+                              color: isDarkMode ? Colors.white : Colors.grey.shade700,
                               fontSize: _mistakeNameFontSize,
                               fontWeight: FontWeight.w600,
                               letterSpacing: _titleLetterSpacing,
