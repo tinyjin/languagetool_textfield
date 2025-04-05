@@ -22,6 +22,7 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   /// Initialize LanguageToolController
   final LanguageToolController _controller = LanguageToolController();
+  final ScrollController _scrollController = ScrollController();
 
   static const List<MainAxisAlignment> alignments = [
     MainAxisAlignment.center,
@@ -39,6 +40,7 @@ class _AppState extends State<App> {
           children: [
             LanguageToolTextField(
               controller: _controller,
+              scrollController: _scrollController,
               language: 'en-US',
             ),
             DropdownMenu(

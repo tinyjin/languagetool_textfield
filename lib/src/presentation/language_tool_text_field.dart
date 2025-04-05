@@ -15,6 +15,9 @@ class LanguageToolTextField extends StatefulWidget {
   /// Color scheme to highlight mistakes
   final LanguageToolController controller;
 
+  /// Scroll controller
+  final ScrollController scrollController;
+
   /// Scroll physics
   final ScrollPhysics scrollPhysics;
 
@@ -60,6 +63,7 @@ class LanguageToolTextField extends StatefulWidget {
   /// Creates a widget that checks grammar errors.
   const LanguageToolTextField({
     required this.controller,
+    required this.scrollController,
     this.style,
     this.decoration = const InputDecoration(),
     this.scrollPhysics = const ScrollPhysics(),
@@ -93,7 +97,6 @@ class LanguageToolTextField extends StatefulWidget {
 
 class _LanguageToolTextFieldState extends State<LanguageToolTextField> {
   FocusNode? _focusNode;
-  final _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -164,14 +167,13 @@ class _LanguageToolTextFieldState extends State<LanguageToolTextField> {
   }
 
   void _textControllerListener() =>
-      widget.controller.scrollOffset = _scrollController.offset;
+      widget.controller.scrollOffset = widget.scrollController.offset;
 
   @override
   void dispose() {
     if (widget.focusNode == null) {
       _focusNode?.dispose();
     }
-    _scrollController.dispose();
     super.dispose();
   }
 }
