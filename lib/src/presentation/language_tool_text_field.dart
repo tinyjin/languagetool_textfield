@@ -69,7 +69,7 @@ class LanguageToolTextField extends StatefulWidget {
     this.scrollPhysics = const ScrollPhysics(),
     this.language = 'auto',
     this.mistakePopup,
-    this.maxLines = 1,
+    this.maxLines,
     this.minLines,
     this.expands = false,
     this.textAlign = TextAlign.start,
