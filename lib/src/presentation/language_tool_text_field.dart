@@ -137,7 +137,7 @@ class _LanguageToolTextFieldState extends State<LanguageToolTextField> {
           textDirection: widget.textDirection,
           focusNode: _focusNode,
           controller: widget.controller,
-          scrollController: _scrollController,
+          scrollController: widget.scrollController,
           decoration: inputDecoration,
           minLines: widget.minLines,
           maxLines: widget.maxLines,
@@ -166,8 +166,11 @@ class _LanguageToolTextFieldState extends State<LanguageToolTextField> {
     );
   }
 
-  void _textControllerListener() =>
+  void _textControllerListener() {
+    if (widget.scrollController.hasClients) {
       widget.controller.scrollOffset = widget.scrollController.offset;
+    }
+  }
 
   @override
   void dispose() {
