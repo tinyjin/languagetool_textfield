@@ -137,6 +137,7 @@ class _LanguageToolTextFieldState extends State<LanguageToolTextField> {
           textDirection: widget.textDirection,
           focusNode: _focusNode,
           controller: widget.controller,
+          scrollPhysics: widget.scrollPhysics,
           scrollController: widget.scrollController,
           decoration: inputDecoration,
           minLines: widget.minLines,
