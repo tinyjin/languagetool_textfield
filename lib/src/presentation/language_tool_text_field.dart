@@ -16,7 +16,7 @@ class LanguageToolTextField extends StatefulWidget {
   final LanguageToolController controller;
 
   /// Scroll controller
-  final ScrollController scrollController;
+  final ScrollController? scrollController;
 
   /// Scroll physics
   final ScrollPhysics scrollPhysics;
@@ -63,7 +63,7 @@ class LanguageToolTextField extends StatefulWidget {
   /// Creates a widget that checks grammar errors.
   const LanguageToolTextField({
     required this.controller,
-    required this.scrollController,
+    this.scrollController,
     this.style,
     this.decoration = const InputDecoration(),
     this.scrollPhysics = const ScrollPhysics(),
